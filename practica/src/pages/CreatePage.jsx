@@ -2,35 +2,31 @@ import { useState } from "react"
 
 export const CreatePage = () =>{
     const [values,setValues] = useState({
-        name: 'Juan',
+        name: 'Juan' ,
         app: 'Rainer'
     })    
     
-    const handlechange =({target})=>{
+    const handleChange =({target})=>{
     //setValues({name: target.value})
-    setValues({...values,[target.name]:target.value})
+    setValues({...values, name:target.value, app: target.value })
 
             
     }
     return (
         <>
-            <div className="cardy-body">
-                {values.name}
-                
-                <input 
-                    value={values.name}
-                    onChange ={handlechange}
-                    name='name'
-                />
-                <br />
-                <br />
-                <input 
-                    values={values.app} 
-                    onChange ={handlechange}
-                    name='app'
-                
-                />
-            </div>
+          <div className="card-body">
+            { values.name }
+            <br />
+            { values.app}
+            <input type="text" className="form-control" 
+                value={ values.name }
+                onChange={ handleChange } />
+            <br />
+            <input type="text" className="form-control"
+                value={ values.app } 
+                onChange={ handleChange } />
+        </div>
+        
         </>
     )
 }
