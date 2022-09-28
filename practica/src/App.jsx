@@ -1,11 +1,8 @@
-import {AppRouter }from './AppRouter' 
-import { MainLayouts } from './layouts/MainLayouts'
-import './sass/app.scss'
-
-export const App = () =>{
+import { Router } from './Router.jsx'
+import { MainLayout } from './layouts/MainLayout.jsx' 
+import './sass/main.scss'
+export const App = () => {
   return (
-    <>
-      <MainLayouts contenido={<AppRouter />} />
-    </>
+    <MainLayout router={ <Router /> } />  
   )
 }
