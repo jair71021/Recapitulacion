@@ -4,20 +4,27 @@ export const Create = () => {
 
     const [values, setValues] = useState({
         names: {
-            value: '',
+            value: 'Jair',
             error: false,
             errors: ['Nombre(s) invalido'],
             name: 'names',
             label: 'Nombre(s)'
         },
-        surname: {
-            value: '',
+        first_surname: {
+            value: 'Suarez',
             error: false,
             errors: ['Apellido paterno invalido'],
-            name: 'surname',
+            name: 'first_surname',
             label: 'Apellido Paterno'
         }
-        
+        ,
+        second_surname: {
+            value: 'Romero',
+            error: false,
+            errors: ['Apellido materno invalido'],
+            name: 'second_surname',
+            label: 'Apellido Materno'
+        }
     })
 
     const handle_input = ({ target: { name, value } }) => {
@@ -26,8 +33,8 @@ export const Create = () => {
     }
 
     return (<>
-        <div >
-            { values.names.value + ' ' + values.surname.value }
+        <div className="alert alert-warning" role="alert">
+            { values.names.value + ' ' + values.first_surname.value + ' ' + values.second_surname.value }
         </div>
 
         <InputCustom controller={ values } handle={ handle_input } />
