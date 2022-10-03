@@ -26,7 +26,7 @@ export const Home = () => {
                     <tr>
                         <th>id</th>
                         <th>nombre</th>
-                        <th>apellidos</th>
+                        
                     </tr>
                                 
                 </thead>
@@ -35,7 +35,7 @@ export const Home = () => {
                         <tr key={index}>
                             <td>{item.id}</td>
                             <td>{item.name}</td>
-                            <td>{item.first_surname}</td>
+                            
                         </tr>
                     ))}
                 </tbody>
