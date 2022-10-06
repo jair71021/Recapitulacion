@@ -1,13 +1,18 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { Home } from './pages/Home'
-import { Create } from './pages/Create'
-export const Router = () => {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CreatePage } from "./pages/CreatePage";
+import { EditPage } from "./pages/EditPage";
+import { HomePage } from "./pages/Homepage";
+export const AppRouter = ()=>{
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={ <Home /> } />
-                <Route path="/create" element={ <Create /> } />
-            </Routes>
-        </BrowserRouter>
-    )
-}
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<HomePage />}></Route>
+                    <Route path="/create" element={<CreatePage />}></Route>
+                    <Route path="/edit/:waifu" element={<EditPage />}></Route>
+                </Routes>
+            </BrowserRouter>
+        </>
+
+    );
+};
